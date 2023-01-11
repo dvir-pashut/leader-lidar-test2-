@@ -25,7 +25,7 @@ pipeline{
                 sh "git checkout ${GIT_BRANCH}"
                 script {
                     e2e_in_commit = sh (
-                        script: 'git log -1 --pretty=%B | grep  "#e2e"|| { echo "" ; }',
+                        script: 'git log -1 --pretty=%B | grep  "#e2e" || { echo "" ; }',
                         returnStdout: true
                     ).trim() 
                 }
